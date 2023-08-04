@@ -1,0 +1,41 @@
+{% extends "Page1/base.html" %}
+{% block content %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart_items %}
+                    <tr>
+                        <td>{{ item.product }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.product.price }}</td>
+                        <td>{%widthratio item.quantity 1 item.product.price%} </td>
+
+                       <td><a href="{% url 'remove_from_cart' item.id %}">Remove</a></td>
+
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3"></td>
+                    <td>Total: </td>
+                    <td>{{ sum }}</td>
+                </tr>
+            </tfoot>
+        </table>
+
+
+
+
+
+
+{% endblock %}

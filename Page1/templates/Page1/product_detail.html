@@ -1,0 +1,29 @@
+{% extends "Page1/base.html" %}
+{% block content %}
+
+    <table class="table">
+        {%if products%}
+            <thead>
+                <tr>
+                    <th>Products</th>
+
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                    <tr>
+                        <td>{{ product.title }}</td>
+
+                        <td>{{ product.price }}</td>
+                        <td><a href="{% url 'cart_detail'  %}">Cart</a></td>
+                        <td><a href="{% url 'add_to_cart' product.id  %}">Add</a></td>
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+{%endif%}
+        </table>
+
+{%endblock%}
