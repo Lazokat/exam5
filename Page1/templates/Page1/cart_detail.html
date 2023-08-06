@@ -18,7 +18,8 @@
                         <td>{{ item.product.price }}</td>
                         <td>{%widthratio item.quantity 1 item.product.price%} </td>
 
-                       <td><a href="{% url 'remove_from_cart' item.id %}">Remove</a></td>
+                       <td><a href="{% url 'shop:remove_from_cart' item.id %}">Remove</a></td>
+
 
 
                     </tr>
@@ -28,7 +29,7 @@
                 <tr>
                     <td colspan="3"></td>
                     <td>Total: </td>
-                    <td>{{ sum }}</td>
+                    <td>{{ total_price }}</td>
                 </tr>
             </tfoot>
         </table>

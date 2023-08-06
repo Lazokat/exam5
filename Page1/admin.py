@@ -8,7 +8,8 @@ class PostA(admin.ModelAdmin):
 
 admin.site.register(Cart,PostA)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('category','title','price','data')
+    list_display = ('category','title','price','data',)
     list_filter = ("category",)
+
 
 admin.site.register(Products,PostAdmin)

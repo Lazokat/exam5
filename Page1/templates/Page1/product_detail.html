@@ -2,7 +2,7 @@
 {% block content %}
 
     <table class="table">
-        {%if products%}
+
             <thead>
                 <tr>
                     <th>Products</th>
@@ -17,13 +17,13 @@
                         <td>{{ product.title }}</td>
 
                         <td>{{ product.price }}</td>
-                        <td><a href="{% url 'cart_detail'  %}">Cart</a></td>
-                        <td><a href="{% url 'add_to_cart' product.id  %}">Add</a></td>
+                        <td><a href="{% url 'shop:cart_detail'  %}">Cart</a></td>
+                        <td><a href="{% url 'shop:add_to_cart' product.id  %}">Add</a></td>
 
                     </tr>
                 {% endfor %}
             </tbody>
-{%endif%}
+
         </table>
 
 {%endblock%}
